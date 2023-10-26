@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_wpp/home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_form_wpp/_cubit.dart'; // Asegúrate de importar tu cubit
+import 'package:flutter_form_wpp/_cubit.dart';
+import 'package:flutter_form_wpp/pelis.dart'; 
 void main() {
-  runApp(const Home());
+  runApp(MyApp());
 }
 
-
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/', // Define la ruta inicial
+      routes: {
+        '/': (context) => Home(), // Ruta de inicio
+        '/pelis': (context) => PelisScreen(), // Ruta para PelisScreen
+      },
+    );
+  }
+}
 
 
 
